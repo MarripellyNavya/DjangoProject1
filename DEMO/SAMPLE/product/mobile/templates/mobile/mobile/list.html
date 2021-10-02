@@ -1,0 +1,19 @@
+{% extends "mobile/base.html" %}
+{% block title %}P App{% endblock %}
+{% block content %}
+ <h1>Mobile Phone Comparision</h1>
+ {% for mobile in mobiles %}
+ <h2>
+ <a href="{{ mobile.get_absolute_url }}">
+ {{ mobile.name }}
+ </a>
+ </h2>
+ <p class="date">
+ Published {{ mobile.publish }} by {{ mobile.author }}
+ </p>
+ {{ mobile.type }}, {{ mobile.catg }}
+ {{ mobile.desc|truncatewords:30|linebreaks }}
+ {% endfor %}
+<br><hr><br>
+{% include "pagination.html" with page=mobiles %}
+{% endblock %}

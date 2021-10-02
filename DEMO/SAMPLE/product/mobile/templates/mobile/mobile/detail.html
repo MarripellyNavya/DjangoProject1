@@ -1,0 +1,11 @@
+{% extends "mobile/base.html" %}
+{% block title %}{{ mobile.name }}{% endblock %}
+{% block content %}
+ <h1>{{ mobile.name }}</h1>
+ <p class="date">
+ Published {{ mobile.publish }} by {{ mobile.dataEntryBy }}
+ </p>
+ {{ mobile.type }}, {{ mobile.catg }}
+ {{ mobile.desc|linebreaks }}
+ <img src="{{mobile.pic.url}}" alt="mobile pic"/>
+{% endblock %}
